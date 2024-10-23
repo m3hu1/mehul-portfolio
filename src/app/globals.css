@@ -142,3 +142,9 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
+
+.hover\:shadow-white:hover {
+  box-shadow: 
+    0 10px 15px -3px rgba(255, 255, 255, 0.1), 
+    0 4px 6px -4px rgba(255, 255, 255, 0.1);
+}

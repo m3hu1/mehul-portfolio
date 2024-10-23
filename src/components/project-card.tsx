@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -7,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -40,11 +43,17 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const { theme } = useTheme();
   return (
+    // <Card
+    //   className={
+    //     "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+    //   }
+    // >
     <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
+      className={`flex flex-col overflow-hidden border transition-all duration-300 ease-out h-full ${
+        theme === "dark" ? "hover:shadow-white" : "hover:shadow-lg"
+      }`} // Conditional class for shadow
     >
       <Link
         href={href || "#"}
