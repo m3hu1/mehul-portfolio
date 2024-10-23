@@ -6,7 +6,8 @@ export const DATA = {
   initials: "MP",
   url: "",
   location: "Greater Noida, UP",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  locationLink:
+    "https://www.google.com/maps/place/Bennett+University/@28.4431291,77.5873979,13.43z/data=!4m6!3m5!1s0x390cbf94deb6bc39:0x7ba6bedc9a2b537f!8m2!3d28.4506465!4d77.5841978!16s%2Fg%2F11c3wvm4q_?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D",
   description:
     "pre-final year university student with a passion for problem-solving and learning new technologies.",
   summary:
