@@ -81,8 +81,8 @@ const config = {
     },
   },
   plugins: [
-    tailwindcssAnimate, // Use imported module
-    typography, // Use imported module
+    tailwindcssAnimate,
+    typography,
   ],
 } satisfies Config;
 
