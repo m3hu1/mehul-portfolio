@@ -1,5 +1,3 @@
-"use client";
-
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -8,12 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/data";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -34,13 +32,13 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
-                {/* <AvatarImage alt={DATA.name} src={DATA.avatarUrl} /> */}
-                <AvatarImage
+                <AvatarImage alt={DATA.name} src={DATA.avatarUrlDark} />
+                {/* <AvatarImage
                   alt={DATA.name}
                   src={
                     theme === "dark" ? DATA.avatarUrlDark : DATA.avatarUrlLight
                   }
-                />
+                /> */}
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
