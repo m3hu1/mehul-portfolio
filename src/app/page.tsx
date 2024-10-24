@@ -147,7 +147,7 @@ export default function Page() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Check out my{" "}
-                <Link href="/blog" className="underline">
+                <Link href="/blog" className="text-blue-500 underline">
                   blog
                 </Link>
                 .
