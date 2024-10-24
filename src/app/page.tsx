@@ -90,7 +90,7 @@ export default function Page() {
                 <Link
                   href="https://drive.google.com/file/d/1LLDsv8uzp07CVql618rH1E3a7t2U9p9W/view?usp=sharing"
                   target="_blank"
-                  className="underline"
+                  className="text-blue-500 hover:underline"
                 >
                   resume
                 </Link>

@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Mehul Pathak",
   initials: "MP",
-  url: "https://mehulpathak.vercel.app",
+  url: "https://www.mehulpathak.com",
   location: "Greater Noida, UP",
   locationLink:
     "https://www.google.com/maps/place/Bennett+University/@28.4431291,77.5873979,13.43z/data=!4m6!3m5!1s0x390cbf94deb6bc39:0x7ba6bedc9a2b537f!8m2!3d28.4506465!4d77.5841978!16s%2Fg%2F11c3wvm4q_?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D",
@@ -49,18 +49,18 @@ export const DATA = {
         icon: Icons.linkedin,
         navbar: true,
       },
+      LeetCode: {
+        name: "Leetcode",
+        url: "https://leetcode.com/pathakkmehul",
+        icon: Icons.leetcode,
+        navbar: true,
+      },
       X: {
         name: "X",
         url: "https://x.com/pathakkmehul",
         icon: Icons.x,
         navbar: true,
       },
-      //   LeetCode: {
-      //     name: "Leetcode",
-      //     url: "https://leetcode.com/pathakkmehul",
-      //     icon: Icons.leetcode,
-      //     navbar: false,
-      //   },
       Email: {
         name: "Send Email",
         url: "mailto:pathakkmehul@gmail.com",
