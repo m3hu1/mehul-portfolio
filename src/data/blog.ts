@@ -6,6 +6,10 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
+import remarkMdx from "remark-mdx";
+import { visit } from 'unist-util-visit';
+import { Node } from 'unist';
+import { Heading, PhrasingContent } from 'mdast';
 
 // type Metadata = {
 //   title: string;
@@ -18,9 +22,37 @@ function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
+function addIdsToHeadings() {
+  return (tree: Node) => {
+    visit(tree, 'heading', (node: Heading) => {
+      const headingText = node.children
+        .map((child: PhrasingContent) => {
+          if (child.type === 'text') {
+            return child.value;
+          }
+          return '';
+        })
+        .join(' ')
+        .trim();
+
+      const id = headingText.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
+      if (!node.data) {
+        node.data = {};
+      }
+      if (!node.data.hProperties) {
+        node.data.hProperties = {};
+      }
+      node.data.hProperties.id = id;
+    });
+  };
+}
+
 export async function markdownToHTML(markdown: string) {
   const p = await unified()
     .use(remarkParse)
+    .use(remarkMdx)
+    .use(addIdsToHeadings)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       // https://rehype-pretty.pages.dev/#usage
