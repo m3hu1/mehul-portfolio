@@ -1,0 +1,142 @@
+---
+title: "Next.js 15 release TLDR"
+publishedAt: "2024-10-25"
+summary: "Next.js 15 was released recently. Here is a too long; didn't read for the impatient."
+---
+
+## Table of Contents
+
+- [Breaking: Async Request APIs](#breaking-async-request-apis)
+- [Breaking: Caching](#breaking-caching)
+- [React 19 Support](#react-19-support)
+- [Server Actions](#server-actions)
+- [Better Forms](#better-forms)
+- [Turbopack Dev](#turbopack-dev)
+- [Static Route Indicator](#static-route-indicator)
+- [next.config.ts](#nextconfigts)
+- [Self Hosting Improvements](#self-hosting-improvements)
+- [ESLint 9 Support](#eslint-9-support)
+- [Enhanced Codemod CLI](#enhanced-codemod-cli)
+
+## Breaking: Async Request APIs
+
+Not all components depend on request-specific data, so it’s unnecessary to wait for the request to render them. Headers, cookies, params, and searchParams are now asynchronous, allowing components to await, for a better and faster user experience.
+
+```js
+import { cookies } from "next/headers";
+
+export async function AdminPanel() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token");
+  //...
+}
+```
+
+## Breaking: Caching
+
+In Next.js 15, the caching default for `GET` Route Handlers and the Client Router Cache has been changed from **cached** by default to **uncached** by default. You can still opt into caching using a static route config option, such as `export const dynamic = 'force-static'`.
+
+Page components are also no longer cached by default by the client router cache.
+
+```js
+// next.config.ts
+
+const nextConfig = {
+  experimental: {
+    staleTimes: {
+      dynamic: 30,
+    },
+  },
+};
+
+export default nextConfig;
+```
+
+[More info on caching defaults](https://nextjs.org/blog/next-15#get-route-handlers-are-no-longer-cached-by-default)
+
+## React 19 Support
+
+Next.js now supports React 19, currently in the release candidate version. React 19 improves handling of hydration errors.
+
+Hydration error message in **Next.js 14.1**:
+![Next.js 14.1 Hydration](https://nextjs.org/_next/image?url=%2Fstatic%2Fblog%2Fnext-15-rc%2Fhydration-error-before-dark.png&w=2048&q=75&dpl=dpl_Fu7jVfWKtfz3vjeN8JMUkr7TkYnm)
+Hydration error message in **Next.js 15**:
+![Next.js 15 Hydration](https://nextjs.org/_next/image?url=%2Fstatic%2Fblog%2Fnext-15-rc%2Fhydration-error-after-dark.png&w=1920&q=75&dpl=dpl_Fu7jVfWKtfz3vjeN8JMUkr7TkYnm)
+
+## Server Actions
+
+Server Actions in Next.js 15 are designed to be more secure and faster through **dead code elimination** and **secure action IDs**.
+
+```js
+// app/actions.js
+"use server";
+
+// This action **is** used in our application, so Next.js
+// will create a secure ID to allow the client to reference
+// and call the Server Action.
+export async function updateUserAction(formData) {}
+
+// This action **is not** used in our application, so Next.js
+// will automatically remove this code during `next build`
+// and will not create a public endpoint.
+export async function deleteUserAction(formData) {}
+```
+
+## Better Forms
+
+The new Form component in Next.js 15 extends HTML’s form functionality, adding **prefetching**, **client-side navigation**, and **progressive enhancement** (if JavaScript hasn’t loaded, forms still work via full-page navigation).
+
+```js
+import Form from "next/form";
+
+export default function Page() {
+  return (
+    <Form action="/search">
+      <input name="query" />
+      <button type="submit">Submit</button>
+    </Form>
+  );
+}
+```
+
+## Turbopack Dev
+
+`next dev --turbo` is now stable and ready in Next.js 15, offering significant performance improvements:
+
+- Up to 76.7% faster local server startup.
+- Up to 96.3% faster code updates with Fast Refresh.
+- Up to 45.8% faster initial route compile without caching (Turbopack does not have disk caching yet).
+
+## Static Route Indicator
+
+Next.js 15 now displays an indicator on static routes to differentiate them visually.
+
+![Static Indicator](https://nextjs.org/_next/image?url=%2Fstatic%2Fblog%2Fnext-15-rc2%2Fstatic-route-dark.png&w=3840&q=75&dpl=dpl_Fu7jVfWKtfz3vjeN8JMUkr7TkYnm)
+
+## next.config.ts
+
+Next.js now uses `next.config.ts`, phasing out `js` and `mjs` configurations.
+
+## Self Hosting Improvements
+
+Next.js 15 offers more control over `Cache-Control` directives and now uses `sharp` by default when running `next start` for improved image handling.
+
+## ESLint 9 Support
+
+ESLint 9 is now supported in Next.js 15, ensuring compatibility with the latest linting rules and configurations.
+
+## Enhanced Codemod CLI
+
+Next.js 15 includes an enhanced codemod CLI for smoother upgrades within your codebase.
+
+```sh
+npx @next/codemod@canary upgrade latest
+```
+
+---
+
+For more details on all the new features and changes, check out the official [Next.js 15 release blog](https://nextjs.org/blog/next-15).
+
+Happy coding!
+
+~ Mehul
