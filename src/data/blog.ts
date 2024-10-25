@@ -11,12 +11,12 @@ import { visit } from 'unist-util-visit';
 import { Node } from 'unist';
 import { Heading, PhrasingContent } from 'mdast';
 
-// type Metadata = {
-//   title: string;
-//   publishedAt: string;
-//   summary: string;
-//   image?: string;
-// };
+type Metadata = {
+  title: string;
+  publishedAt: string;
+  summary: string;
+  image?: string;
+};
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
@@ -72,10 +72,16 @@ export async function getPost(slug: string) {
   const filePath = path.join("posts", `${slug}.mdx`);
   const source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
+  const typedMetadata: Metadata = {
+    title: metadata.title,
+    publishedAt: metadata.publishedAt,
+    summary: metadata.summary,
+    image: metadata.image,
+  };
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: typedMetadata,
     slug,
   };
 }
