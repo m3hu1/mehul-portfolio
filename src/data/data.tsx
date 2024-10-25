@@ -80,15 +80,17 @@ export const DATA = {
         "A peer-to-peer (P2P) file sharing application that utilizes WebRTC for seamless communication and features real-time chat functionality through Socket.IO.",
       technologies: [
         "Next.js",
-        "Typescript",
+
         "WebRTC",
         "Socket.IO",
-        "Tailwind CSS",
-        "Shadcn UI",
-        "Aceternity UI",
+        "TypeScript",
         "Node.js",
+        "Tailwind CSS",
         "Render",
+        "shadcn/ui",
+        "Indie UI",
         "Vercel",
+        // "Aceternity UI",
       ],
       links: [
         {
@@ -102,7 +104,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/z.png",
       // video: "",
     },
     {
@@ -111,7 +113,7 @@ export const DATA = {
       dates: "Aug 2024 - Sept 2024",
       active: true,
       description:
-        "Inspired by Apple Intelligence in Apple Notes, Notez is an AI math solver that allows users to draw mathematical expressions on a blank canvas. It intelligently recognizes these drawings, solves the expressions, and converts them to LaTeX.",
+        "An AI math solver that allows users to draw mathematical expressions on a blank canvas. It intelligently recognizes these drawings, solves the expressions, and converts them to LaTeX.",
       technologies: [
         "Vite",
         "React",
@@ -135,7 +137,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/n.png",
       // video: "",
     },
     {
@@ -144,13 +146,14 @@ export const DATA = {
       dates: "Dec 2023 - Jan 2024",
       active: true,
       description:
-        "A GPA calculator designed for college students, addressing the common challenge of understanding the credit system. It provides an intuitive interface for students to easily calculate their SGPA, helping them navigate their academic performance.",
+        "A GPA calculator designed for college students, addressing the common issue of understanding the credit system. It provides a simple UI for quick SGPA calculation.",
       technologies: [
         "Next.js",
         "Typescript",
-        "Tailwind CSS",
         "Node.js",
+        "Tailwind CSS",
         "Vercel",
+        "shadcn/ui",
       ],
       links: [
         {
@@ -164,7 +167,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/b.png",
       // video: "",
     },
     {
@@ -180,7 +183,7 @@ export const DATA = {
         "Next.js",
         "Typescript",
         "Tailwind CSS",
-        "Lottie",
+        // "Lottie",
         "Node.js",
         "Vercel",
       ],
@@ -196,7 +199,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/q.png",
       // video: "",
     },
   ],
