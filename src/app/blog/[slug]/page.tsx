@@ -1,3 +1,4 @@
+import { ConfettiButton } from "@/components/magicui/confetti";
 import { getPost } from "@/data/blog";
 import { DATA } from "@/data/data";
 import { formatDate } from "@/lib/utils";
@@ -55,6 +56,8 @@ export default async function Blog({
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
+      <br></br>
+      <ConfettiButton>Thanks for reading!</ConfettiButton>
     </section>
   );
 }
