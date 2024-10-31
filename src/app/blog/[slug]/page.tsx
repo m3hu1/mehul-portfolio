@@ -57,7 +57,7 @@ export default async function Blog({
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
       <br></br>
-      <ConfettiButton>Thanks for reading!</ConfettiButton>
+      <ConfettiButton></ConfettiButton>
     </section>
   );
 }

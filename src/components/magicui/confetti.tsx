@@ -18,6 +18,7 @@ import type {
 import confetti from "canvas-confetti";
 
 import { Button, ButtonProps } from "@/components/ui/button";
+import { HyperText } from "./hyper";
 
 type Api = {
   fire: (options?: ConfettiOptions) => void;
@@ -117,7 +118,8 @@ function ConfettiButton({ options, children, ...props }: ConfettiButtonProps) {
 
   return (
     <Button variant="link" className="px-0 py-0 hidden sm:block" onClick={handleClick} {...props}>
-      {children}
+      {/* {children} */}
+      <HyperText text="Thanks for reading!"></HyperText>
     </Button>
   );
 }
