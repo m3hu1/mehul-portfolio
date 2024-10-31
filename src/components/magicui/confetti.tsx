@@ -116,7 +116,7 @@ function ConfettiButton({ options, children, ...props }: ConfettiButtonProps) {
   };
 
   return (
-    <Button variant="link" className="px-0 py-0" onClick={handleClick} {...props}>
+    <Button variant="link" className="px-0 py-0 hidden sm:block" onClick={handleClick} {...props}>
       {children}
     </Button>
   );
