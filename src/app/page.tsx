@@ -1,5 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import SparklesText from "@/components/magicui/sparkle";
 import { ProjectCard } from "@/components/project-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -110,7 +111,8 @@ export default function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  {/* Check out my latest work */}
+                  <SparklesText text="Check out my latest work"></SparklesText>
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   I love building projects, whether they are simple websites or
@@ -168,7 +170,7 @@ export default function Page() {
                 Contact
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
+              Get in touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just{" "}
