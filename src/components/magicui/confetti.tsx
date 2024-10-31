@@ -1,6 +1,5 @@
 "use client"
 
-import type { ReactNode } from "react";
 import React, {
   createContext,
   forwardRef,
@@ -28,7 +27,7 @@ type Props = React.ComponentPropsWithRef<"canvas"> & {
   options?: ConfettiOptions;
   globalOptions?: ConfettiGlobalOptions;
   manualstart?: boolean;
-  children?: ReactNode;
+  // children?: ReactNode;
 };
 
 export type ConfettiRef = Api | null;
@@ -40,7 +39,7 @@ const Confetti = forwardRef<ConfettiRef, Props>((props, ref) => {
     options,
     globalOptions = { resize: true, useWorker: true },
     manualstart = false,
-    children,
+    // children,
     ...rest
   } = props;
   const instanceRef = useRef<ConfettiInstance | null>(null); // confetti instance
@@ -91,7 +90,7 @@ const Confetti = forwardRef<ConfettiRef, Props>((props, ref) => {
   return (
     <ConfettiContext.Provider value={api}>
       <canvas ref={canvasRef} {...rest} />
-      {children}
+      {/* {children} */}
     </ConfettiContext.Provider>
   );
 });
@@ -99,7 +98,7 @@ const Confetti = forwardRef<ConfettiRef, Props>((props, ref) => {
 interface ConfettiButtonProps extends ButtonProps {
   options?: ConfettiOptions &
     ConfettiGlobalOptions & { canvas?: HTMLCanvasElement };
-  children?: React.ReactNode;
+  // children?: React.ReactNode;
 }
 
 function ConfettiButton({ options, children, ...props }: ConfettiButtonProps) {
