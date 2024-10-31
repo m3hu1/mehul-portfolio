@@ -101,7 +101,7 @@ interface ConfettiButtonProps extends ButtonProps {
   // children?: React.ReactNode;
 }
 
-function ConfettiButton({ options, children, ...props }: ConfettiButtonProps) {
+function ConfettiButton({ options, ...props }: ConfettiButtonProps) {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
