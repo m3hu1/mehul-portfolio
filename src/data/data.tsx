@@ -205,6 +205,24 @@ export const DATA = {
   ],
   more_projects: [
     {
+      title: "learning-go",
+      href: "https://github.com/m3hu1/learning-go",
+      dates: "Nov 2024",
+      active: true,
+      description:
+        "Collection of programs and projects that I built using Go while learning the Go programming language.",
+      technologies: ["Go", "Misc"],
+      links: [
+        {
+          type: "Repository",
+          href: "https://github.com/m3hu1/learning-go",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      // video: "",
+    },
+    {
       title: "go-todo",
       href: "https://github.com/m3hu1/golang-todo-cli",
       dates: "Sept 2024",
