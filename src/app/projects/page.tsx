@@ -18,7 +18,7 @@ const Page = () => {
       const annotation = annotate(recentProjectsRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 2,
+        strokeWidth: 3,
       });
       annotation.show();
     }
