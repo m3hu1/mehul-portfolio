@@ -28,7 +28,7 @@ export default function Page() {
       const annotation = annotate(blogLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 2,
+        strokeWidth: 3,
       });
       annotation.show();
     }
@@ -38,7 +38,7 @@ export default function Page() {
       const annotation = annotate(resumeLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 2,
+        strokeWidth: 3,
       });
       annotation.show();
     }
@@ -47,7 +47,7 @@ export default function Page() {
       const annotation = annotate(emailLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 2,
+        strokeWidth: 3,
       });
       annotation.show();
     }
@@ -56,7 +56,7 @@ export default function Page() {
       const annotation = annotate(twitterLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 2,
+        strokeWidth: 3,
       });
       annotation.show();
     }
@@ -66,7 +66,7 @@ export default function Page() {
       const annotation = annotate(skillsHeadingRef.current, {
         type: 'underline',
         color: '#ED8796',
-        strokeWidth: 2,
+        strokeWidth: 3,
         padding: 0.1,
       });
       annotation.show();
@@ -77,7 +77,7 @@ export default function Page() {
       const annotation = annotate(aboutHeadingRef.current, {
         type: 'underline',
         color: '#ED8796',
-        strokeWidth: 2,
+        strokeWidth: 3,
         padding: 0.1,
       });
       annotation.show();
