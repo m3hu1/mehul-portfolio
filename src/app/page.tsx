@@ -1,3 +1,5 @@
+"use client"
+
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import SparklesText from "@/components/magicui/sparkle";
@@ -8,10 +10,80 @@ import { DATA } from "@/data/data";
 import Link from "next/link";
 import Markdown from "react-markdown";
 // import { useTheme } from "next-themes";
+import { useEffect, useRef } from 'react';
+import { annotate } from 'rough-notation';
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  const blogLinkRef = useRef<HTMLAnchorElement>(null);
+  const resumeLinkRef = useRef<HTMLAnchorElement>(null);
+  const emailLinkRef = useRef<HTMLAnchorElement>(null);
+  const twitterLinkRef = useRef<HTMLAnchorElement>(null);
+  const skillsHeadingRef = useRef<HTMLHeadingElement>(null);
+  const aboutHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (blogLinkRef.current) {
+      const annotation = annotate(blogLinkRef.current, {
+        type: 'underline',
+        color: '#3C82F6',
+        strokeWidth: 2,
+      });
+      annotation.show();
+    }
+  }, []);
+  useEffect(() => {
+    if (resumeLinkRef.current) {
+      const annotation = annotate(resumeLinkRef.current, {
+        type: 'underline',
+        color: '#3C82F6',
+        strokeWidth: 2,
+      });
+      annotation.show();
+    }
+
+    if (emailLinkRef.current) {
+      const annotation = annotate(emailLinkRef.current, {
+        type: 'underline',
+        color: '#3C82F6',
+        strokeWidth: 2,
+      });
+      annotation.show();
+    }
+
+    if (twitterLinkRef.current) {
+      const annotation = annotate(twitterLinkRef.current, {
+        type: 'underline',
+        color: '#3C82F6',
+        strokeWidth: 2,
+      });
+      annotation.show();
+    }
+  }, []);
+  useEffect(() => {
+    if (skillsHeadingRef.current) {
+      const annotation = annotate(skillsHeadingRef.current, {
+        type: 'underline',
+        color: '#ED8796',
+        strokeWidth: 2,
+        padding: 0.1,
+      });
+      annotation.show();
+    }
+  }, []);
+  useEffect(() => {
+    if (aboutHeadingRef.current) {
+      const annotation = annotate(aboutHeadingRef.current, {
+        type: 'underline',
+        color: '#ED8796',
+        strokeWidth: 2,
+        padding: 0.1,
+      });
+      annotation.show();
+    }
+  }, []);
+
   // const { theme } = useTheme();
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -48,7 +120,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-2xl font-bold">About</h2>
+          <h2 className="text-2xl font-bold inline-block" ref={aboutHeadingRef}>About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
@@ -59,12 +131,12 @@ export default function Page() {
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-2xl font-bold">Skills</h2>
+            <h2 className="text-2xl font-bold inline-block" ref={skillsHeadingRef}>Skills</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge variant="new" key={skill}>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
@@ -76,7 +148,7 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.learning.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge variant="new" key={skill}>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
@@ -91,11 +163,11 @@ export default function Page() {
                 <Link
                   href="https://drive.google.com/file/d/1LLDsv8uzp07CVql618rH1E3a7t2U9p9W/view?usp=sharing"
                   target="_blank"
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500"
+                  ref={resumeLinkRef}
                 >
-                  resume
+                  resume.
                 </Link>
-                .
               </h3>
             </div>
           </BlurFade>
@@ -149,10 +221,9 @@ export default function Page() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Check out my{" "}
-                <Link href="/blog" className="text-blue-500 hover:underline">
-                  blog
+                <Link href="/blog" className="text-blue-500" ref={blogLinkRef}>
+                  blog.
                 </Link>
-                .
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 I occasionally enjoy writing blogs, primarily about tech topics,
@@ -172,11 +243,12 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Get in touch
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed whitespace-nowrap">
                 Want to chat? Just{" "}
                 <Link
                   href={`mailto:${DATA.contact.email}`}
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500"
+                  ref={emailLinkRef}
                 >
                   email me
                 </Link>{" "}
@@ -184,11 +256,11 @@ export default function Page() {
                 <Link
                   href={DATA.contact.social.X.url}
                   target="_blank"
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500"
+                  ref={twitterLinkRef}
                 >
-                  dm me on twitter
+                  dm me on twitter.
                 </Link>
-                .
               </p>
             </div>
           </BlurFade>
