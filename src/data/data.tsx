@@ -13,7 +13,8 @@ export const DATA = {
   summary:
     "Since childhood, I have been passionate about computers, technology, and gaming. While gaming sparked my interest in game development, I ultimately found my true passion in programming through various [projects](/#projects). I particularly enjoy [competitive programming](https://leetcode.com/u/pathakkmehul) and tackling complex problems. I love learning new technologies and building websites with the latest tech stacks. Additionally, I take pride in my typing skills, often reaching speeds of over 200 words per minute.",
   avatarUrlLight: "/mehul_light.png",
-  avatarUrlDark: "/mehul_dark.png",
+  // avatarUrlDark: "/mehul_dark.png",
+  avatarUrlDark: "/mehul.jpg",
   skills: [
     "Python",
     "C++",

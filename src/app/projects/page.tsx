@@ -1,12 +1,29 @@
+"use client";
+
 import React from "react";
 import { ProjectCard } from "@/components/project-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/data";
 import Link from "next/link";
+import { useEffect, useRef } from 'react';
+import { annotate } from 'rough-notation';
 
 const BLUR_FADE_DELAY = 0.04;
 
 const page = () => {
+  const recentProjectsRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    if (recentProjectsRef.current) {
+      const annotation = annotate(recentProjectsRef.current, {
+        type: 'underline',
+        color: '#3C82F6',
+        strokeWidth: 2,
+      });
+      annotation.show();
+    }
+  }, []);
+
   return (
     <section id="more_projects">
       <div className="-mt-12 space-y-12 w-full py-12">
@@ -24,7 +41,8 @@ const page = () => {
                 the past few years. View my most{" "}
                 <Link
                   href="/#projects"
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500"
+                  ref={recentProjectsRef}
                 >
                   recent work
                 </Link>
