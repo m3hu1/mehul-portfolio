@@ -33,6 +33,7 @@ export interface BadgeProps
 
 function Badge({ className, variant, ...props }: BadgeProps) {
   const badgeRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const annotationRef = useRef<any>(null);
 
   const handleMouseEnter = () => {
