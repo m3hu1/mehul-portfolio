@@ -122,8 +122,9 @@ export default function Page() {
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-2xl font-bold inline-block" ref={aboutHeadingRef}>About</h2>
         </BlurFade>
+        {/* <br></br> */}
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          <Markdown className="mt-3 prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
           </Markdown>
         </BlurFade>
