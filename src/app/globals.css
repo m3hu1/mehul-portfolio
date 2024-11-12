@@ -79,6 +79,10 @@ html {
     }
   }
 
+  .bg-ring {
+    background-color: #3C82F6; /* Example color, adjust as needed */
+  }
+
   h3 code {
     @apply !text-lg md:!text-xl;
   }

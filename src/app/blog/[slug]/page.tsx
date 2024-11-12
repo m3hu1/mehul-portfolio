@@ -1,4 +1,5 @@
 import { ConfettiButton } from "@/components/magicui/confetti";
+import ScrollProgress from "@/components/scroll-progress";
 import { getPost } from "@/data/blog";
 import { DATA } from "@/data/data";
 import { formatDate } from "@/lib/utils";
@@ -20,6 +21,7 @@ export default async function Blog({
 
   return (
     <section id="blog">
+      <ScrollProgress />
       <script
         type="application/ld+json"
         suppressHydrationWarning
