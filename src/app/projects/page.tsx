@@ -10,7 +10,7 @@ import { annotate } from 'rough-notation';
 
 const BLUR_FADE_DELAY = 0.04;
 
-const page = () => {
+const Page = () => {
   const recentProjectsRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -76,4 +76,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
