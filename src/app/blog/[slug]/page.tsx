@@ -1,3 +1,4 @@
+import BackButton from "@/components/back-button";
 import { ConfettiButton } from "@/components/magicui/confetti";
 import ScrollProgress from "@/components/scroll-progress";
 import { getPost } from "@/data/blog";
@@ -22,6 +23,7 @@ export default async function Blog({
   return (
     <section id="blog">
       <ScrollProgress />
+      <BackButton>Back to Posts</BackButton>
       <script
         type="application/ld+json"
         suppressHydrationWarning
