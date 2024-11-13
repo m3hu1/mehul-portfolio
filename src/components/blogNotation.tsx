@@ -15,10 +15,12 @@ const AnnotatedHeading = React.forwardRef<HTMLHeadingElement, Omit<AnnotatedHead
       useEffect(() => {
         if (blogHeadingRef.current) {
           const annotation = annotate(blogHeadingRef.current, {
-            type: 'circle',
+            type: 'bracket',
             color: '#ED8796',
             strokeWidth: 3,
-            padding: 9,
+            padding: 5,
+            brackets: ["left", "right"],
+            animationDuration: 1500,
           });
           annotation.show();
         }
@@ -26,5 +28,7 @@ const AnnotatedHeading = React.forwardRef<HTMLHeadingElement, Omit<AnnotatedHead
 
   return <span ref={blogHeadingRef}>{text}</span>;
 });
+
+AnnotatedHeading.displayName = 'AnnotatedHeading';
 
 export default AnnotatedHeading;
