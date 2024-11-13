@@ -16,6 +16,7 @@ type Metadata = {
   publishedAt: string;
   summary: string;
   image?: string;
+  tags?: string[];
 };
 
 function getMDXFiles(dir: string) {
@@ -77,6 +78,7 @@ export async function getPost(slug: string) {
     publishedAt: metadata.publishedAt,
     summary: metadata.summary,
     image: metadata.image,
+    tags: metadata.tags,
   };
   const content = await markdownToHTML(rawContent);
   return {
