@@ -79,7 +79,8 @@ export default async function BlogPage() {
               .map(post => (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
                   <File value={post.slug}>
-                    <p>{post.metadata.title}</p>
+                    {/* <p>{post.metadata.title}</p> */}
+                    <p>{`${post.slug}.mdx`}</p>
                   </File>
                 </Link>
               ))}
@@ -90,7 +91,7 @@ export default async function BlogPage() {
               .map(post => (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
                   <File value={post.slug}>
-                    <p>{post.metadata.title}</p>
+                    <p>{`${post.slug}.mdx`}</p>
                   </File>
                 </Link>
               ))}
@@ -101,7 +102,8 @@ export default async function BlogPage() {
               .map(post => (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
                   <File value={post.slug}>
-                    <p>{post.metadata.title}</p>
+                    {/* <p>{post.metadata.title}</p> */}
+                    <p>{`${post.slug}.mdx`}</p>
                   </File>
                 </Link>
               ))}
