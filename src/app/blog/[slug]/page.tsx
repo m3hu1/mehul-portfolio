@@ -1,5 +1,4 @@
 import BackButton from "@/components/back-button";
-import { ConfettiButton } from "@/components/magicui/confetti";
 import ScrollProgress from "@/components/scroll-progress";
 import { getPost } from "@/data/blog";
 import { DATA } from "@/data/data";
@@ -61,7 +60,6 @@ export default async function Blog({
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
       <br></br>
-      <ConfettiButton></ConfettiButton>
     </section>
   );
 }

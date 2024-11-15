@@ -47,6 +47,7 @@ export default async function BlogPage() {
           my blog
         </h1>
       </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY} > 
       <Tree
         className="p-2 overflow-hidden rounded-lg bg-background"
         initialExpandedItems={["1"]}
@@ -82,7 +83,7 @@ export default async function BlogPage() {
           </Folder>
         </Folder>
       </Tree>
-
+      </BlurFade>
       <br />
 
       {posts
