@@ -7,6 +7,7 @@ import { DATA } from "@/data/data";
 import Link from "next/link";
 import { useEffect, useRef } from 'react';
 import { annotate } from 'rough-notation';
+import Particles from "@/components/magicui/particles";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -25,6 +26,8 @@ const Page = () => {
   }, []);
 
   return (
+    <>
+    <Particles className="hidden md:block fixed inset-0 -z-10" quantity={100} />
     <section id="more_projects">
       <div className="-mt-12 space-y-12 w-full py-12">
         <BlurFade delay={BLUR_FADE_DELAY * 10}>
@@ -41,12 +44,11 @@ const Page = () => {
                 the past few years. View my most{" "}
                 <Link
                   href="/#projects"
-                  className="text-blue-500"
-                  ref={recentProjectsRef}
+                  className="text-blue-500 underline-a"
+                  // ref={recentProjectsRef}
                 >
-                  recent work
+                  recent work.
                 </Link>
-                .
               </p>
             </div>
           </div>
@@ -73,6 +75,7 @@ const Page = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

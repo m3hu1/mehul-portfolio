@@ -1,4 +1,5 @@
 import BackButton from "@/components/back-button";
+import Particles from "@/components/magicui/particles";
 import ScrollProgress from "@/components/scroll-progress";
 import { getPost } from "@/data/blog";
 import { DATA } from "@/data/data";
@@ -20,6 +21,8 @@ export default async function Blog({
   }
 
   return (
+    <>
+    <Particles className="hidden md:block fixed inset-0 -z-10" quantity={100} />
     <section id="blog">
       <ScrollProgress />
       <BackButton>Back to Posts</BackButton>
@@ -61,5 +64,6 @@ export default async function Blog({
       ></article>
       <br></br>
     </section>
+    </>
   );
 }

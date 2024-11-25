@@ -5,12 +5,14 @@ import { DATA } from "@/data/data";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import { DM_Sans as Test } from "next/font/google";
 import "./globals.css";
 import ClientProviders from "@/components/Client";
 
-const fontSans = FontSans({
+const fontSans = Test({
   subsets: ["latin"],
   variable: "--font-sans",
+  // weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

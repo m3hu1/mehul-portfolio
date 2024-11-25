@@ -1,4 +1,5 @@
 import BlurFade from "@/components/magicui/blur-fade";
+import Particles from "@/components/magicui/particles";
 import { File, Folder, Tree } from "@/components/ui/tree";
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
@@ -41,6 +42,8 @@ export default async function BlogPage() {
   ];
 
   return (
+    <>
+    <Particles className="hidden md:block fixed inset-0 -z-10" quantity={100} />
     <section>
       <BlurFade delay={BLUR_FADE_DELAY}>
         <h1 className="font-medium text-2xl mb-8 tracking-tighter">
@@ -105,5 +108,6 @@ export default async function BlogPage() {
           </BlurFade>
         ))}
     </section>
+    </>
   );
 }

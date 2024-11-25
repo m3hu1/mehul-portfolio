@@ -12,6 +12,7 @@ import Markdown from "react-markdown";
 // import { useTheme } from "next-themes";
 import { useEffect, useRef } from 'react';
 import { annotate } from 'rough-notation';
+import Particles from "@/components/magicui/particles";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -29,6 +30,8 @@ export default function Page() {
         type: 'underline',
         color: '#3C82F6',
         strokeWidth: 3,
+        padding: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -39,6 +42,8 @@ export default function Page() {
         type: 'underline',
         color: '#3C82F6',
         strokeWidth: 3,
+        padding: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -47,7 +52,9 @@ export default function Page() {
       const annotation = annotate(emailLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 3,
+        strokeWidth: 2,
+        padding: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -56,7 +63,9 @@ export default function Page() {
       const annotation = annotate(twitterLinkRef.current, {
         type: 'underline',
         color: '#3C82F6',
-        strokeWidth: 3,
+        strokeWidth: 2,
+        padding: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -67,7 +76,9 @@ export default function Page() {
         type: 'underline',
         color: '#ED8796',
         strokeWidth: 3,
-        padding: 0.1,
+        padding: 1,
+        iterations: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -78,7 +89,9 @@ export default function Page() {
         type: 'underline',
         color: '#ED8796',
         strokeWidth: 3,
-        padding: 0.1,
+        padding: 1,
+        iterations: 1,
+        animationDuration: 1000,
       });
       annotation.show();
     }
@@ -86,6 +99,8 @@ export default function Page() {
 
   // const { theme } = useTheme();
   return (
+    <>
+    <Particles className="hidden md:block fixed inset-0 -z-10" quantity={100} />
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
@@ -120,7 +135,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-2xl font-bold inline-block" ref={aboutHeadingRef}>About</h2>
+          <h2 className="text-2xl font-bold inline-block underline-animation" >About</h2>
         </BlurFade>
         {/* <br></br> */}
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
@@ -132,7 +147,7 @@ export default function Page() {
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-2xl font-bold inline-block" ref={skillsHeadingRef}>Skills</h2>
+            <h2 className="text-2xl font-bold inline-block underline-animation" >Skills</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
@@ -164,8 +179,8 @@ export default function Page() {
                 <Link
                   href="https://drive.google.com/file/d/1LLDsv8uzp07CVql618rH1E3a7t2U9p9W/view?usp=sharing"
                   target="_blank"
-                  className="text-blue-500"
-                  ref={resumeLinkRef}
+                  className="text-blue-500 underline-a"
+                  // ref={resumeLinkRef}
                 >
                   resume.
                 </Link>
@@ -222,7 +237,7 @@ export default function Page() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Check out my{" "}
-                <Link href="/blog" className="text-blue-500" ref={blogLinkRef}>
+                <Link href="/blog" className="text-blue-500 underline-a" >
                   blog.
                 </Link>
               </h2>
@@ -248,8 +263,8 @@ export default function Page() {
                 Want to chat?<br></br> Just{" "}
                 <Link
                   href={`mailto:${DATA.contact.email}`}
-                  className="text-blue-500"
-                  ref={emailLinkRef}
+                  className="text-blue-500 underline-a"
+                  // ref={emailLinkRef}
                 >
                   email me
                 </Link>{" "}
@@ -257,8 +272,8 @@ export default function Page() {
                 <Link
                   href={DATA.contact.social.X.url}
                   target="_blank"
-                  className="text-blue-500"
-                  ref={twitterLinkRef}
+                  className="text-blue-500 underline-a"
+                  // ref={twitterLinkRef}
                 >
                   dm me on twitter.
                 </Link>
@@ -268,5 +283,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </>
   );
 }
