@@ -204,3 +204,20 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 article img {
   @apply rounded-lg;
 }
+
+.prose blockquote {
+  font-style: normal;
+  quotes: none;
+}
+
+.page-link {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.page-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.page-list {
+  list-style-type: disc;
+}
