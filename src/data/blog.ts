@@ -10,6 +10,7 @@ import remarkMdx from "remark-mdx";
 import { visit } from 'unist-util-visit';
 import { Node } from 'unist';
 import { Heading, PhrasingContent } from 'mdast';
+import rehypeToc from '@jsdevtools/rehype-toc';
 
 type Metadata = {
   title: string;
@@ -55,6 +56,13 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkMdx)
     .use(addIdsToHeadings)
     .use(remarkRehype)
+    .use(rehypeToc, {
+      headings: ["h2", "h3"],
+      cssClasses: {
+        list: "page-list",
+        link: "page-link",
+      }
+    })
     .use(rehypePrettyCode, {
       // https://rehype-pretty.pages.dev/#usage
       theme: {
