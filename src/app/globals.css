@@ -200,3 +200,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
     transform: scaleX(1);
   }
 }
+
+article img {
+  @apply rounded-lg;
+}
