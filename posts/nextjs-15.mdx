@@ -5,20 +5,6 @@ summary: "Next.js 15 was released recently. Here is a too long; didn't read for 
 tags: ["tech"]
 ---
 
-## Table of Contents
-
-- [Breaking: Async Request APIs](#breaking-async-request-apis)
-- [Breaking: Caching](#breaking-caching)
-- [React 19 Support](#react-19-support)
-- [Server Actions](#server-actions)
-- [Better Forms](#better-forms)
-- [Turbopack Dev](#turbopack-dev)
-- [Static Route Indicator](#static-route-indicator)
-- [next.config.ts](#nextconfigts)
-- [Self Hosting Improvements](#self-hosting-improvements)
-- [ESLint 9 Support](#eslint-9-support)
-- [Enhanced Codemod CLI](#enhanced-codemod-cli)
-
 ## Breaking: Async Request APIs
 
 Not all components depend on request-specific data, so it’s unnecessary to wait for the request to render them. Headers, cookies, params, and searchParams are now asynchronous, allowing components to await, for a better and faster user experience.
@@ -133,8 +119,6 @@ Next.js 15 includes an enhanced codemod CLI for smoother upgrades within your co
 ```sh
 npx @next/codemod@canary upgrade latest
 ```
-
----
 
 For more details on all the new features and changes, check out the official [Next.js 15 release blog](https://nextjs.org/blog/next-15).
 
