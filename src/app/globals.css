@@ -96,7 +96,7 @@ html {
   }
   
   pre {
-    @apply !px-0 rounded-lg overflow-x-auto py-4
+    @apply !px-0 rounded-lg overflow-x-auto !py-0
   }
    
   pre [data-line] {
