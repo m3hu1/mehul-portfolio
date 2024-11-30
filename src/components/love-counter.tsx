@@ -56,7 +56,7 @@ export default function LoveCounter({ slug, readonly = false }: LoveCounterProps
       }`}
     >
       <Heart
-        className={`${readonly ? 'w-[12px] h-[12px]' : 'w-[24px] h-[24px]'} flex-shrink-0 ${
+        className={`w-[1em] h-[1em] flex-shrink-0 ${
           isLoved && !readonly ? 'fill-current text-red-500' : ''
         }`}
       />
