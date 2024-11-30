@@ -17,10 +17,8 @@ export async function GET(
     const post = await prisma.postLove.findUnique({
       where: { slug: params.slug },
     });
-    // console.log('GET request successful:', post);
     return NextResponse.json({ count: post?.count || 0 });
   } catch (error) {
-    // console.error('Database error:', error);
     return NextResponse.json({ error: 'Database error' }, { status: 500 });
   }
 }
@@ -30,7 +28,6 @@ export async function POST(
   { params }: { params: { slug: string } }
 ) {
   const { action } = await request.json();
-  console.log('POST request received:', { slug: params.slug, action });
   
   try {
     const post = await prisma.postLove.upsert({
@@ -43,10 +40,8 @@ export async function POST(
       },
     });
     
-    console.log('Database updated:', post);
     return NextResponse.json({ count: post.count });
-  } catch (error) {
-    console.error('Database error:', error);
-    return NextResponse.json({ error: 'Database error' }, { status: 500 });
+  } catch (e) {
+    return NextResponse.json({ error: 'Database error occurred' }, { status: 500 });
   }
 }
