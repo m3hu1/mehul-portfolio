@@ -60,7 +60,7 @@ export default function LoveCounter({ slug, readonly = false }: LoveCounterProps
           isLoved && !readonly ? 'fill-current text-red-500' : ''
         }`}
       />
-      <span className={`tabular-nums inline-block leading-none ${readonly ? 'translate-y-[0.5px]' : ''}`}>
+      <span className={"tabular-nums inline-block leading-none translate-y-[0.5px]"}>
         {count}
       </span>
     </Component>

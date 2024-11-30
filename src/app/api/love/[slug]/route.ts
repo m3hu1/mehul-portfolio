@@ -17,10 +17,10 @@ export async function GET(
     const post = await prisma.postLove.findUnique({
       where: { slug: params.slug },
     });
-    console.log('GET request successful:', post);
+    // console.log('GET request successful:', post);
     return NextResponse.json({ count: post?.count || 0 });
   } catch (error) {
-    console.error('Database error:', error);
+    // console.error('Database error:', error);
     return NextResponse.json({ error: 'Database error' }, { status: 500 });
   }
 }
