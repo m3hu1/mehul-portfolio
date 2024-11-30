@@ -1,3 +1,4 @@
+import LoveCounter from "@/components/love-counter";
 import BlurFade from "@/components/magicui/blur-fade";
 import Particles from "@/components/magicui/particles";
 import { File, Folder, Tree } from "@/components/ui/tree";
@@ -100,9 +101,12 @@ export default async function BlogPage() {
             <Link className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
               <div className="w-full flex flex-col">
                 <p className="tracking-tight">{post.metadata.title}</p>
-                <p className="h-6 text-xs text-muted-foreground">
-                  {post.metadata.publishedAt}
-                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-xs text-muted-foreground">
+                    {post.metadata.publishedAt}
+                  </p>
+                  <LoveCounter slug={post.slug} readonly />
+                </div>
               </div>
             </Link>
           </BlurFade>

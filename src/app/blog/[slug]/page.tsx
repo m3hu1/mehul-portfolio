@@ -1,4 +1,5 @@
 import BackButton from "@/components/back-button";
+import LoveCounter from "@/components/love-counter";
 import Particles from "@/components/magicui/particles";
 import ScrollProgress from "@/components/scroll-progress";
 import { getPost } from "@/data/blog";
@@ -57,6 +58,7 @@ export default async function Blog({
             {formatDate(post.metadata.publishedAt)}
           </p>
         </Suspense>
+        <LoveCounter slug={params.slug} />
       </div>
       <article
         className="prose dark:prose-invert prose-code:p-1 prose-code:rounded-md prose-code:border prose-code:before:content-none prose-code:after:content-none prose-code:px-1.5 prose-code:overflow-x-auto dark:prose-code:bg-gray-600/25"
