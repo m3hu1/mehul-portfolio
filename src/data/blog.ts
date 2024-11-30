@@ -8,8 +8,9 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import remarkMdx from "remark-mdx";
 import { visit } from 'unist-util-visit';
-import { Node } from 'unist';
+import { Node, Parent } from 'unist';
 import { Heading, PhrasingContent } from 'mdast';
+import { Element } from 'hast';
 import rehypeToc from '@jsdevtools/rehype-toc';
 
 type Metadata = {
@@ -50,12 +51,53 @@ function addIdsToHeadings() {
   };
 }
 
+function addImageCaptions() {
+  return (tree: Node) => {
+    visit(tree, 'element', (node: Element, index: number | null, parent: Parent) => {
+      if (
+        node.tagName === 'img' && 
+        node.properties && 
+        typeof node.properties.alt === 'string' &&
+        parent && 
+        index !== null
+      ) {
+        const caption = node.properties.alt;
+        if (!caption || caption.startsWith('_')) return;
+
+        const figure = {
+          type: 'element',
+          tagName: 'figure',
+          properties: {},
+          children: [
+            node,
+            {
+              type: 'element',
+              tagName: 'figcaption',
+              properties: {
+                className: ['text-sm text-center text-gray-600 dark:text-gray-400 mt-2']
+              },
+              children: [{
+                type: 'text',
+                value: caption
+              }]
+            }
+          ]
+        };
+
+        parent.children[index] = figure;
+        return index + 1;
+      }
+    });
+  };
+}
+
 export async function markdownToHTML(markdown: string) {
   const p = await unified()
     .use(remarkParse)
     .use(remarkMdx)
     .use(addIdsToHeadings)
     .use(remarkRehype)
+    .use(addImageCaptions)
     .use(rehypeToc, {
       headings: ["h2", "h3"],
       cssClasses: {
