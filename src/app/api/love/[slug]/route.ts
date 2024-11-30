@@ -18,7 +18,7 @@ export async function GET(
       where: { slug: params.slug },
     });
     return NextResponse.json({ count: post?.count || 0 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Database error' }, { status: 500 });
   }
 }
@@ -41,7 +41,7 @@ export async function POST(
     });
     
     return NextResponse.json({ count: post.count });
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: 'Database error occurred' }, { status: 500 });
   }
 }
