@@ -52,6 +52,8 @@ export default async function BlogPage() {
         </h1>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY} > 
+      <div className="overflow-x-auto">
+      <div className="inline-block min-w-full">
       <Tree
         className="p-2 overflow-hidden rounded-lg bg-background"
         initialExpandedItems={["1"]}
@@ -62,7 +64,7 @@ export default async function BlogPage() {
             {sortPostsByDate("tech").map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <File value={post.id}>
-                  <p>{`${post.id}.mdx`}</p>
+                  <p className="whitespace-nowrap">{`${post.name}`}</p>
                 </File>
               </Link>
             ))}
@@ -71,7 +73,7 @@ export default async function BlogPage() {
             {sortPostsByDate("rant").map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <File value={post.id}>
-                  <p>{`${post.id}.mdx`}</p>
+                <p className="whitespace-nowrap">{`${post.name}`}</p>
                 </File>
               </Link>
             ))}
@@ -80,13 +82,15 @@ export default async function BlogPage() {
             {sortPostsByDate("misc").map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <File value={post.id}>
-                  <p>{`${post.id}.mdx`}</p>
+                <p className="whitespace-nowrap">{`${post.name}`}</p>
                 </File>
               </Link>
             ))}
           </Folder>
         </Folder>
       </Tree>
+      </div>
+      </div>
       </BlurFade>
       <br />
 
