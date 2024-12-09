@@ -73,6 +73,39 @@ export const DATA = {
   },
   projects: [
     {
+      title: "algorithmik",
+      href: "https://www.algorithmik.in/",
+      dates: "Oct 2024 - Dec 2024",
+      active: true,
+      description:
+        "A comprehensive guide to mastering data structures and algorithms. It covers a wide range of topics, from the basics to advanced concepts. It also includes various problem sets.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "MarkdownX",
+        "Node.js",
+        "Magic UI",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.algorithmik.in/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Repository",
+          href: "https://github.com/m3hu1/algorithmik",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/a.png",
+      // video: "",
+    },
+    {
       title: "z1ppie",
       href: "https://z1ppie.vercel.app",
       dates: "Sept 2024 - Oct 2024",
@@ -171,38 +204,38 @@ export const DATA = {
       image: "/b.png",
       // video: "",
     },
-    {
-      title: "qaution",
-      href: "https://qaution.vercel.app",
-      dates: "Mar 2023 - May 2023",
-      active: true,
-      description:
-        "A platform that offers a comprehensive suite of cybersecurity services, including redirect tracking, SSL certificate verification, IP reputation checking, and more.",
-      technologies: [
-        "Python",
-        "FastAPI",
-        "Next.js",
-        "Typescript",
-        "Tailwind CSS",
-        // "Lottie",
-        "Node.js",
-        "Vercel",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://qaution.vercel.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Repository",
-          href: "https://github.com/m3hu1/qaution",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/q.png",
-      // video: "",
-    },
+    // {
+    //   title: "qaution",
+    //   href: "https://qaution.vercel.app",
+    //   dates: "Mar 2023 - May 2023",
+    //   active: true,
+    //   description:
+    //     "A platform that offers a comprehensive suite of cybersecurity services, including redirect tracking, SSL certificate verification, IP reputation checking, and more.",
+    //   technologies: [
+    //     "Python",
+    //     "FastAPI",
+    //     "Next.js",
+    //     "Typescript",
+    //     "Tailwind CSS",
+    //     // "Lottie",
+    //     "Node.js",
+    //     "Vercel",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://qaution.vercel.app",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Repository",
+    //       href: "https://github.com/m3hu1/qaution",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/q.png",
+    //   // video: "",
+    // },
   ],
   more_projects: [
     {
