@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  icons: {
+    icon: DATA.avatarUrlDark,
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: `${DATA.name}`,
     description: DATA.description,
@@ -29,6 +33,13 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: DATA.avatarUrlDark,
+        width: 800,
+        height: 600,
+      },
+    ]
   },
   robots: {
     index: true,
