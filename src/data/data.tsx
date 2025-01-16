@@ -239,6 +239,24 @@ export const DATA = {
   ],
   more_projects: [
     {
+      title: "cf-testcases-checker-rust",
+      href: "https://github.com/m3hu1/cf-testcases-checker-rust",
+      dates: "Jan 2025",
+      active: true,
+      description:
+        "Simple command-line tool written in Rust to fetch and run test cases for Codeforces problems against your Golang solutions.",
+      technologies: ["Rust", "CLI"],
+      links: [
+        {
+          type: "Repository",
+          href: "https://github.com/m3hu1/cf-testcases-checker-rust",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      // video: "",
+    },
+    {
       title: "learning-go",
       href: "https://github.com/m3hu1/learning-go",
       dates: "Nov 2024",
