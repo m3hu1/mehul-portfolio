@@ -239,6 +239,24 @@ export const DATA = {
   ],
   more_projects: [
     {
+      title: "codeforces-problem-search",
+      href: "https://github.com/m3hu1/codeforces-problem-search",
+      dates: "Jan 2025",
+      active: true,
+      description:
+        "This is a Raycast extension that fetches all details of a problem from codeforces using the problem id or problem name.",
+      technologies: ["Raycast", "Extension", "TypeScript", "Node.js", "React"],
+      links: [
+        {
+          type: "Repository",
+          href: "https://github.com/m3hu1/codeforces-problem-search",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      // video: "",
+    },
+    {
       title: "cf-testcases-checker-rust",
       href: "https://github.com/m3hu1/cf-testcases-checker-rust",
       dates: "Jan 2025",
