@@ -75,10 +75,10 @@ export const DATA = {
     {
       title: "algorithmik",
       href: "https://www.algorithmik.in/",
-      dates: "Oct 2024 - Dec 2024",
+      dates: "Oct. 2024 - Jan. 2025",
       active: true,
       description:
-        "A comprehensive guide to mastering data structures and algorithms. It covers a wide range of topics, from the basics to advanced concepts. It also includes various problem sets.",
+        "A comprehensive guide to mastering data structures and algorithms. Explore notes on important DSA topics and tackle a variety of problem sets.",
       technologies: [
         "React",
         "TypeScript",
@@ -108,7 +108,7 @@ export const DATA = {
     {
       title: "z1ppie",
       href: "https://z1ppie.vercel.app",
-      dates: "Sept 2024 - Oct 2024",
+      dates: "Sept. 2024 - Oct. 2024",
       active: true,
       description:
         "A peer-to-peer (P2P) file sharing application that utilizes WebRTC for seamless communication and features real-time chat functionality through Socket.IO.",
@@ -144,7 +144,7 @@ export const DATA = {
     {
       title: "notez",
       href: "https://notezai.vercel.app",
-      dates: "Aug 2024 - Sept 2024",
+      dates: "Aug. 2024 - Sept. 2024",
       active: true,
       description:
         "An AI math solver that allows users to draw mathematical expressions on a blank canvas. It intelligently recognizes these drawings, solves the expressions, and converts them to LaTeX.",
@@ -177,7 +177,7 @@ export const DATA = {
     {
       title: "bugpa",
       href: "https://bugpa.vercel.app",
-      dates: "Dec 2023 - Jan 2024",
+      dates: "Dec. 2023 - Jan. 2024",
       active: true,
       description:
         "A GPA calculator designed for college students, addressing the common issue of understanding the credit system. It provides a simple UI for quick SGPA calculation.",
