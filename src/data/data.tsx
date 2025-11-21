@@ -74,7 +74,7 @@ export const DATA = {
   projects: [
     {
       title: "algorithmik",
-      href: "https://www.algorithmik.in/",
+      href: "https://algorithmik.vercel.app/",
       dates: "Oct. 2024 - Jan. 2025",
       active: true,
       description:
@@ -93,7 +93,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://www.algorithmik.in/",
+          href: "https://algorithmik.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
