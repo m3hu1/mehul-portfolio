@@ -15,4 +15,4 @@ This portfolio is built using a modern tech stack that enhances both performance
 - **ShadcnUI**: A component library that offers pre-designed UI elements, speeding up the development process.
 - **MagicUI**: A UI toolkit that provides additional components and styles to enhance the visual appeal of the portfolio.
 
-> Check it out at https://mehulpathak.com.
+> Check it out at https://mehulpathak-alt.vercel.app.
